@@ -9,7 +9,7 @@
    A:不加，插入数据库中的中文会乱码
 
 4、Q:API路由参数问题，SendProcessByBatchNO/{batchNo}，方法获取不到batchNo
-   A:架构升级到2.0.12就没有问题了
+   A:架构升级到3.0.02就没有问题了
 
 5、启动项里增加了打包配置项，将各个模块打包的包中：
  <ItemGroup>

@@ -50,17 +50,11 @@ namespace Push
                         web.ConfigureFeature(settings =>
                         {
                             settings.MvcFeatures = Sherlock.Framework.Web.MvcFeatures.Api;
-                            settings.JsonSerializeLongAsString = true;
-                            settings.JsonCapitalizationStyle = Sherlock.Framework.Web.CapitalizationStyle.CamelCase;
+                            settings.JsonCaseStyle = Sherlock.Framework.Web.JsonCaseStyle.CamelCase;
                         });
 
                     });
                     builder.AddDapperDataFeature();
-                },
-                scope =>
-                {
-                    scope.LoggerFactory.AddConsole(LogLevel.Error);
-                    //scope.LoggerFactory.AddFile("d:\\start_log.txt");
                 });
             services.AddAutoMapper();
             services.AddOptions().Configure<RedisConnectOptions>(Configuration.GetSection(nameof(RedisConnectOptions)));
@@ -70,7 +64,8 @@ namespace Push
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
-            //loggerFactory.AddConsole(LogLevel.Warning);
+            loggerFactory.AddConsole(LogLevel.Information);
+            loggerFactory.AddDebug(LogLevel.Error);
             app.StartSherlockWebApplication();
             //启动一个新的线程，来处理接收的数据
             IMsgService msgService = SherlockEngine.Current.GetService<IMsgService>();

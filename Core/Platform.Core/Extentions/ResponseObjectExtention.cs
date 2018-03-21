@@ -33,10 +33,10 @@ namespace Platform.Core.Extentions
             MemberInfo[] memInfo = type.GetMember(detail.Msg);
             if (memInfo != null && memInfo.Length > 0)
             {
-                IEnumerable<Attribute> attrs = memInfo[0].GetCustomAttributes(typeof(DescriptionAttribute), false);
+                var attrs = memInfo[0].GetCustomAttributes(typeof(DescriptionAttribute), false);
                 if (attrs != null)
                 {
-                    List<Attribute> attributeList = attrs.ToList();
+                    List<Attribute> attributeList = attrs.Select(e=>(Attribute)e).ToList();
                     if (attributeList.Count > 0) {
                         detail.Msg = ((DescriptionAttribute)attributeList[0]).Description;
                     }

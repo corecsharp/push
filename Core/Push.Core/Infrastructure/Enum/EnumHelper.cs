@@ -21,11 +21,11 @@ namespace Push.Core.Infrastructure.Enum
             MemberInfo[] memInfo = type.GetMember(en.ToString());
             if (memInfo != null && memInfo.Length > 0)
             {
-                IEnumerable<Attribute> attrs = memInfo[0].GetCustomAttributes(typeof(DescriptionAttribute), false);
+                var attrs = memInfo[0].GetCustomAttributes(typeof(DescriptionAttribute), false);
 
                 if (attrs != null)
                 {
-                    var attrsList = attrs.ToList();
+                    var attrsList = attrs.Select(e => (Attribute)e).ToList();
                     if (attrsList.Count > 0)
                     {
                         return ((DescriptionAttribute)attrsList[0]).Description;

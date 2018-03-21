@@ -1,12 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard1.6</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Sherlock.Framework.Web" Version="2.0.1" />
-    <PackageReference Include="Sherlock.Framework.Web.FluentValidation" Version="2.0.1" />
+    <PackageReference Include="Sherlock.Framework.Web" Version="3.0.0" />
+    <PackageReference Include="Sherlock.Framework.Web.FluentValidation" Version="3.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
 
   </ItemGroup>
