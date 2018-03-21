@@ -1,0 +1,8 @@
+{
+  "name": "Push.Service.ProcessService",
+  "author": "fengwei",
+  "description": "推送信息模块",
+  "version": "2.0",
+  "category": "Push.Service.ProcessService",
+  "includeUserInterface": false
+}

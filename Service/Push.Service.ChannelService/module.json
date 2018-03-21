@@ -1,0 +1,8 @@
+{
+  "name": "Push.Service.ChannelService",
+  "author": "fengwei",
+  "description": "推送通道模块",
+  "version": "2.0",
+  "category": "Push.Service.ChannelService",
+  "includeUserInterface": false
+}

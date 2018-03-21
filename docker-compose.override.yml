@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  gz.push:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "80"

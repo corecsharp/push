@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.6</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Sherlock.Framework.Web" Version="2.0.1" />
+    <PackageReference Include="Sherlock.Framework.Web.FluentValidation" Version="2.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\Platform.Core\Platform.Core.csproj" />
+    <ProjectReference Include="..\..\Core\Push.Core\Push.Core.csproj" />
+    <ProjectReference Include="..\..\Service\Push.Service.ChannelService\Push.Service.ChannelService.csproj" />
+    <ProjectReference Include="..\..\Service\Push.Service.ConfigService\Push.Service.ConfigService.csproj" />
+    <ProjectReference Include="..\..\Service\Push.Service.MessageCenterService\Push.Service.MessageCenterService.csproj" />
+    <ProjectReference Include="..\..\Service\Push.Service.ProcessService\Push.Service.ProcessService.csproj" />
+    <ProjectReference Include="..\..\Service\Push.Service.TokenService\Push.Service.TokenService.csproj" />
+  </ItemGroup>
+
+</Project>

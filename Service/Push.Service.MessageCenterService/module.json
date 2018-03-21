@@ -1,0 +1,8 @@
+{
+  "name": "Push.Service.MessageCenterService",
+  "author": "fengwei",
+  "description": "消息中心",
+  "version": "2.0",
+  "category": "Push.Service.MessageCenterService",
+  "includeUserInterface": false
+}

@@ -1,0 +1,8 @@
+{
+  "name": "Push.Service.TokenService",
+  "author": "fengwei",
+  "description": "手机设备注册模块",
+  "version": "2.0",
+  "category": "Push.Service.TokenService",
+  "includeUserInterface": false
+}

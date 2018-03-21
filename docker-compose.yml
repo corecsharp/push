@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  gz.push:
+    image: gz.push
+    build:
+      context: ./src
+      dockerfile: Dockerfile
