@@ -16,6 +16,9 @@ using Sherlock.Framework.Environment;
 using System.Threading;
 using Push.Api.Config;
 using Sherlock;
+using Swashbuckle.AspNetCore.Swagger;
+using Microsoft.Extensions.PlatformAbstractions;
+using System.IO;
 
 namespace Push
 {
@@ -59,11 +62,34 @@ namespace Push
             services.AddAutoMapper();
             services.AddOptions().Configure<RedisConnectOptions>(Configuration.GetSection(nameof(RedisConnectOptions)));
             services.AddOptions().Configure<RedisCacheKeyOptions>(Configuration.GetSection(nameof(RedisCacheKeyOptions)));
+            services.AddSwaggerGen(s=> {
+                s.SwaggerDoc("v2",
+                   new Info
+                   {
+                       Title = "Push API",
+                       Version = "2.3.0",
+                       Contact = new Contact { Name = "the developer", Email = "280894830@qq.com" },
+                       Description = "Push API"
+                   });
+
+                var basePath = PlatformServices.Default.Application.ApplicationBasePath;
+                var xmlPath = Path.Combine(basePath, "Push.Api.xml");
+                s.IncludeXmlComments(xmlPath);
+            });
+
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
+            app.UseSwagger();
+            // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.), specifying the Swagger JSON endpoint.
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v2/swagger.json", "Push API V2");
+            });
             loggerFactory.AddConsole(LogLevel.Information);
             loggerFactory.AddDebug(LogLevel.Error);
             app.StartSherlockWebApplication();

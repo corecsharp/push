@@ -5,6 +5,10 @@
 
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\Debug\netcoreapp2.0\Push.xml</DocumentationFile>
+  </PropertyGroup>
+
   <ItemGroup>
     <None Remove=".dockerignore" />
     <None Remove="Properties\PublishProfiles\FolderProfile.pubxml" />
@@ -22,8 +26,7 @@
     <PackageReference Include="Sherlock.Framework.Web" Version="3.0.0" />
     <PackageReference Include="Sherlock.Framework.Web.FluentValidation" Version="3.0.0" />
     <PackageReference Include="Sherlock.Framework.Data.Dapper" Version="3.0.0" />
-    
-
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="2.2.0" />
   </ItemGroup>
   <ItemGroup>
     <DotNetCliToolReference Include="Sherlock.Framework.Modularity.Tools.Vs2017" Version="2.1.2" />

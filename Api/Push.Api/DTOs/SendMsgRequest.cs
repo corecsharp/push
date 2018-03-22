@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 namespace Push.Api.DTOs
 {
+    /// <summary>
+    /// 接收消息请求
+    /// </summary>
     public class SendMsgRequest : SendMsgDto
     {
         /// <summary>
@@ -12,7 +15,9 @@ namespace Push.Api.DTOs
 
     }
 
-
+    /// <summary>
+    /// 消息体
+    /// </summary>
     public class SendMsgDto
     {
         /// <summary>
