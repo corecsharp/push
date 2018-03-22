@@ -1,4 +1,4 @@
-﻿{
+{
   "iisSettings": {
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
@@ -17,8 +17,8 @@
     },
     "Push": {
       "commandName": "Project",
-      "launchBrowser": false,
       "environmentVariables": {
+        "ASPNETCORE_URLS": "http://*:5001",
         "ASPNETCORE_ENVIRONMENT": "testing"
       },
       "applicationUrl": "http://localhost:5000"

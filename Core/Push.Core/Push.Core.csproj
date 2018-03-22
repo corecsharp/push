@@ -14,4 +14,9 @@
     <ProjectReference Include="..\Platform.Core\Platform.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="PushProviders\GeTui\Android\" />
+    <Folder Include="PushProviders\GeTui\IOS\" />
+  </ItemGroup>
+
 </Project>
