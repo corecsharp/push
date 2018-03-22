@@ -114,7 +114,7 @@ namespace Push.Api.Controllers
         /// <summary>
         /// 清空消息
         /// </summary>
-        /// <param name="unReadCountRequestDto">未读消息个数请求</param>
+        /// <param name="clearMsgRequestDto">未读消息个数请求</param>
         /// <returns></returns>
         [HttpPost, Route("ClearMsg"), ModelVerify]
         public async Task<object> ClearMsg(ClearMsgRequestDto clearMsgRequestDto)
@@ -124,16 +124,16 @@ namespace Push.Api.Controllers
         }
 
 
-        /// <summary>
-        /// 清空消息
-        /// </summary>
-        /// <param name="unReadCountRequestDto">未读消息个数请求</param>
-        /// <returns></returns>
-        [HttpGet, Route("Test")]
-        public async Task<object> Test()
-        {
-            return this.Success($"Test");
-        }
+        ///// <summary>
+        ///// 清空消息
+        ///// </summary>
+        ///// <param name="unReadCountRequestDto">未读消息个数请求</param>
+        ///// <returns></returns>
+        //[HttpGet, Route("Test")]
+        //public async Task<object> Test()
+        //{
+        //    return this.Success($"Test");
+        //}
 
     }
 }

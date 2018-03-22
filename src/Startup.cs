@@ -68,7 +68,7 @@ namespace Push
                    {
                        Title = "Push API",
                        Version = "2.3.0",
-                       Contact = new Contact { Name = "the developer", Email = "280894830@qq.com" },
+                       Contact = new Contact { Name = "the developer", Email = "allen_wheecas@163.com" },
                        Description = "Push API"
                    });
 
